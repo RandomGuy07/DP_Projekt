@@ -25,7 +25,7 @@ COMPARISON_TIME  = 0.5
 N_SUBSAMPLE = 20000
 SEED        = 42
 
-OUT_PLOT = "comparison_normal_t0p5_{name}.png"
+OUT_PLOT = "comparison_t0p5_{name}.png"
 
 
 print(f"Loading CFD snapshot: {VTK_FILE}")
