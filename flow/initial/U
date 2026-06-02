@@ -1,0 +1,23 @@
+FoamFile { version 2.0; format ascii; class volVectorField; object U; }
+dimensions [0 1 -1 0 0 0 0];
+internalField uniform (1.0 0 0);
+boundaryField
+{
+    inlet
+    {
+        type            codedFixedValue;
+        value           uniform (1.0 0 0);
+        name            sineInlet;
+        code
+        #{
+            const scalar t  = this->db().time().value();
+            const scalar pi = Foam::constant::mathematical::pi;
+            const scalar U  = 1.0 + 0.5 * Foam::sin(2.0 * pi * 1.0 * t);
+            operator==(vector(U, 0, 0));
+        #};
+    }
+    outlet       { type zeroGradient; }
+    walls        { type noSlip; }
+    cylinder     { type noSlip; }
+    frontAndBack { type empty; }
+}

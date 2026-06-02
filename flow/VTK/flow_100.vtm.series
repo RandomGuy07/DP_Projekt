@@ -1,0 +1,7 @@
+{
+  "file-series-version" : "1.0",
+  "files" : [
+    { "name" : "flow_100_0.vtm", "time" : 0 },
+    { "name" : "flow_100_1507.vtm", "time" : 0.5 }
+  ]
+}
